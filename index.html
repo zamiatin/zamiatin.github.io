@@ -103,6 +103,7 @@
 
                         instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
                             // instaRedirect.setLocation('/ios-redirect.php')
+                            instaRedirect.setLocation(protocol + '://' + clearUrl);
                         });
 
                     } else {
