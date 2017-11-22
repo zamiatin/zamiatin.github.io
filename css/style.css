@@ -1,0 +1,176 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+html, body{
+  background-color: #000;
+  height: 100%;
+  min-width: 320px;
+}
+
+a {
+  display: block;
+  height: 100%;
+}
+
+.container-bg {
+  width: 100%;
+  height: 100%;
+  background: url(../img/bg-mobile.jpg) center top no-repeat;
+  background-size: 100% 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 115px;
+}
+
+.logo {
+  width: 150px;
+}
+
+.headerText {
+  width: 124px;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  top: -45px;
+  background: url(../img/girl.png) no-repeat center top;
+  min-height: 330px;
+}
+
+.bonus-wrap,
+.button-wrap {
+  text-align: center;
+}
+
+.bonus-wrap {
+  padding-top: 185px;
+}
+
+.bonus-wrap img {
+  width: 200px;
+}
+
+.button-wrap {
+  position: relative;
+  background: url(../img/roulette.png) no-repeat center top;
+  background-size: 365px;
+  min-height: 225px;
+}
+
+.button-wrap img {
+  position: relative;
+  top: 53px;
+  width: 113px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .header {
+    height: 220px;
+  }
+
+  .logo {
+    width: 264px;
+  }
+
+  .headerText {
+    width: 232px;
+  }
+
+  .main {
+    top: -90px;
+    background: url(../img/girl-xl.png) no-repeat center top;
+    min-height: 600px;
+  }
+
+  .bonus-wrap {
+    padding-top: 335px;
+  }
+
+  .bonus-wrap img {
+    width: 360px;
+  }
+
+  .button-wrap {
+    background: url(../img/roulette.png) no-repeat center top;
+    min-height: 472px;
+  }
+
+  .button-wrap img {
+    top: 101px;
+    width: 258px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container-bg {
+    background:  url(../img/bg-min.jpg) no-repeat center 0;
+    height: 900px;
+    width: 1120px;
+    margin: 0 auto;
+    background-size: contain;
+  }
+
+  .container{
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .header {
+    height: 220px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 264px;
+  }
+
+  .headerText {
+    width: 232px;
+  }
+
+  .main {
+    top: -210px;
+    background: url(../img/girl-xl.png) no-repeat center top;
+    height: 600px;
+  }
+
+  .bonus-wrap {
+    padding-top: 335px;
+  }
+
+  .bonus-wrap img {
+    width: 360px;
+  }
+
+  .button-wrap {
+    background: url(../img/roulette.png) no-repeat center top;
+    min-height: 472px;
+  }
+
+  .button-wrap img {
+    top: 101px;
+    width: 258px;
+  }
+}
+
+
