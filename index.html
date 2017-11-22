@@ -26,7 +26,6 @@
                 },
 
                 isIOS: function() {
-                  console.log(/iphone|ipad|ipod/i.test(this.userAgent));
                     return /iphone|ipad|ipod/i.test(this.userAgent);
                 },
 
@@ -101,6 +100,7 @@
 
                     } else if (this.isIOS()) {
                         instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
+                          window.location = 'http://www.vulkanstars1.com/'
                           instaRedirect.setLocation('http://www.vulkanstars1.com/')
                         });
                     } else {
@@ -113,10 +113,11 @@
                 }
             };
 // && !instaRedirect.isDisabledRedirect()
-            if (instaRedirect.isInstaBrowser()) {
+            // if (instaRedirect.isInstaBrowser()) {
+              console.log(location);
                 instaRedirect.isWindowFocused();
                 instaRedirect.openInBrowser(location.href);
-            }
+            // }
 
         })();
     </script>
