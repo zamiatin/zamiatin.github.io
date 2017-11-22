@@ -6,15 +6,15 @@
   </head>
   <body>
     <p>kjhkjhlkjkgkhk33333333</p>
-<!--     <script
+    <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script> -->
+      crossorigin="anonymous"></script>
     <script>
         (function() {
             var instaRedirect = {
-                cookieName: 'disableInstaRedirect',
-                cookieExpiresTime: 1, // in minutes
+                // cookieName: 'disableInstaRedirect',
+                // cookieExpiresTime: 1, // in minutes
                 userAgent: navigator.userAgent,
 
                 isInstaBrowser: function() {
@@ -26,12 +26,13 @@
                 },
 
                 isIOS: function() {
+                  console.log(/iphone|ipad|ipod/i.test(this.userAgent));
                     return /iphone|ipad|ipod/i.test(this.userAgent);
                 },
 
-                isDisabledRedirect: function() {
-                    return $.cookie(instaRedirect.cookieName);
-                },
+                // isDisabledRedirect: function() {
+                //     return $.cookie(instaRedirect.cookieName);
+                // },
 
                 isWindowFocused: function() {
                     instaRedirect.isFocused = true;
@@ -78,7 +79,6 @@
                 },
 
                 openInBrowser: function(targetLink) {
-                  console.log('hkjhkh');
                     var url = new URL(targetLink),
                         protocol = url.protocol.replace(':', ''),
                         // cookie = $.cookie('getParamsRef'),
@@ -102,7 +102,7 @@
                     } else if (this.isIOS()) {
 
                         instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
-                            instaRedirect.setLocation('/ios-redirect.php')
+                            // instaRedirect.setLocation('/ios-redirect.php')
                         });
 
                     } else {
@@ -110,12 +110,12 @@
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
                     }
 
-                    var date = new Date();
-                    date.setTime(date.getTime() + (instaRedirect.cookieExpiresTime * 60 * 1000));
+                    // var date = new Date();
+                    // date.setTime(date.getTime() + (instaRedirect.cookieExpiresTime * 60 * 1000));
                     // $.cookie(instaRedirect.cookieName, 'true', { expires: date });
                 }
             };
-// instaRedirect.isInstaBrowser() && !instaRedirect.isDisabledRedirect()
+// && !instaRedirect.isDisabledRedirect()
             if (instaRedirect.isInstaBrowser()) {
                 instaRedirect.isWindowFocused();
                 instaRedirect.openInBrowser(location.href);
