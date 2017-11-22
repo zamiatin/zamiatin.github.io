@@ -100,12 +100,9 @@
                         });
 
                     } else if (this.isIOS()) {
-                            instaRedirect.setLocation(protocol + '://' + clearUrl);
-
-                        // instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
-                        //     // instaRedirect.setLocation('/ios-redirect.php')
-                        //     instaRedirect.setLocation(protocol + '://' + clearUrl);
-                        // });
+                        instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
+                          instaRedirect.setLocation('/ios-redirect.php')
+                        });
 
                     } else {
 
