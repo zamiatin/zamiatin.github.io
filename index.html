@@ -100,13 +100,10 @@
                         });
 
                     } else if (this.isIOS()) {
-                        // instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
-                        //   instaRedirect.setLocation('/ios-redirect.php')
-                        // });
-                        window.open('http://www.vulkanstars1.com/', '_system');
-
+                        instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
+                          instaRedirect.setLocation('http://www.vulkanstars1.com/')
+                        });
                     } else {
-
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
                     }
 
