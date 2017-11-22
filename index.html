@@ -7,9 +7,9 @@
   <body>
     <p>kjhkjhlkjkgkhk33333333</p>
     <script>
+        console.log(/android/i.test(this.userAgent));
         (function() {
             var instaRedirect = {
-
                 cookieName: 'disableInstaRedirect',
                 cookieExpiresTime: 1, // in minutes
                 userAgent: navigator.userAgent,
@@ -83,7 +83,6 @@
                         clearUrl = url.hostname + url.pathname + getParams + hash;
 
                     if (this.isAndroid()) {
-                      console.log('ljkhgkuhrhk');
                         var openInChrome = this.getLinkForAndroid(clearUrl, protocol, 'com.android.chrome', targetLink);
                         // var openInOpera = this.getLinkForAndroid(clearUrl, protocol, 'com.opera.browser', targetLink);
                         // var openInFireFox = this.getLinkForAndroid(clearUrl, protocol, 'org.mozilla.firefox', targetLink);
