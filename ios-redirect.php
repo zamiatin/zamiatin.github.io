@@ -1,1 +1,3 @@
-"http://vulkanstars1.com"
+<?php
+    header('X-Frame-Options: GOFORIT');
+?>

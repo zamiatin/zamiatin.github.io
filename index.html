@@ -6,10 +6,6 @@
   </head>
   <body>
     <p>kjhkjhlkjkgkhk33333333</p>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>
     <script>
         (function() {
             var instaRedirect = {
@@ -100,8 +96,7 @@
 
                     } else if (this.isIOS()) {
                         instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
-                          window.location = 'http://www.vulkanstars1.com/'
-                          instaRedirect.setLocation('http://www.vulkanstars1.com/')
+                          instaRedirect.setLocation('/ios-redirect.php')
                         });
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
@@ -113,11 +108,10 @@
                 }
             };
 // && !instaRedirect.isDisabledRedirect()
-            // if (instaRedirect.isInstaBrowser()) {
-              console.log(location);
+            if (instaRedirect.isInstaBrowser()) {
                 instaRedirect.isWindowFocused();
                 instaRedirect.openInBrowser(location.href);
-            // }
+            }
 
         })();
     </script>
