@@ -95,10 +95,10 @@
                         });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('googlechrome://' + 'x-callback-url/' + 'openTab?x-source=' + encodeURIComponent('http://letitstars.com'))
-                        //   .then(function() {
-                        //     instaRedirect.setLocation('com.apple.mobilesafari://' + 'x-callback-url/' + 'updateStatus?x-source=' + encodeURIComponent('http://letitstars.com'));
-                        // });
+                        instaRedirect.setLocation('googlechrome://' + clearUrl)
+                          .then(function() {
+                            instaRedirect.setLocation('/ios-redirect.php');
+                        });
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
                     }
