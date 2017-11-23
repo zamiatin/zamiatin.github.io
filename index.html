@@ -95,9 +95,10 @@
                         });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
-                          instaRedirect.setLocation('/ios-redirect.php')
-                        });
+                        instaRedirect.setLocation('com.apple.mobilesafari://' + clearUrl)
+                        // .then(function() {
+                        //   instaRedirect.setLocation('/ios-redirect.php')
+                        // });
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
                     }
