@@ -95,7 +95,7 @@
                         });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('com.apple.mobilesafari://' + clearUrl)
+                        instaRedirect.setLocation('com.apple.mobilesafari://' + 'x-callback-url/' + 'open?' + encodeURIComponent('http://letitstars.com'))
                         // .then(function() {
                         //   instaRedirect.setLocation('/ios-redirect.php')
                         // });
