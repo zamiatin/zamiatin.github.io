@@ -12,6 +12,7 @@
                 // cookieName: 'disableInstaRedirect',
                 // cookieExpiresTime: 1, // in minutes
                 userAgent: navigator.userAgent,
+                isFocused: true,
 
                 isInstaBrowser: function() {
                     return /instagram/i.test(this.userAgent)
@@ -30,11 +31,10 @@
                 // },
 
                 isWindowFocused: function() {
-                    instaRedirect.isFocused = true;
-                    window.onfocus = function(){
+                    window.onfocus = function() {
                         instaRedirect.isFocused = true;
                     };
-                    window.onblur = function(){
+                    window.onblur = function() {
                         instaRedirect.isFocused = false;
                     };
                 },
@@ -53,8 +53,7 @@
 
                 setLocation: function(url) {
                     if (!instaRedirect.isFocused) return Promise.resolve();
-
-                    return new Promise(function(resolve, reject) {
+                    var result = new Promise(function(resolve, reject) {
                         var frame = instaRedirect.createFrame();
 
                         frame.onload = function() {
@@ -65,6 +64,7 @@
                             }, 100);
                         };
                     });
+                    return result;
                 },
 
                 getLinkForAndroid: function(clearUrl, protocol, packageStr, targetLink) {
@@ -95,8 +95,9 @@
                         });
 
                     } else if (this.isIOS()) {
-                        var i = instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
-                          instaRedirect.setLocation('com.apple.mobilesafari://' + 'x-callback-url/' + 'open?' + encodeURIComponent('http://letitstars.com'));
+                        instaRedirect.setLocation('googlechrome://' + clearUrl)
+                          .then(function() {
+                            instaRedirect.setLocation('com.apple.mobilesafari://' + 'x-callback-url/' + 'updateStatus?x-source=' + encodeURIComponent('http://letitstars.com'));
                         });
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
@@ -109,8 +110,8 @@
             };
 // && !instaRedirect.isDisabledRedirect()
             if (instaRedirect.isInstaBrowser()) {
-                instaRedirect.isWindowFocused();
-                instaRedirect.openInBrowser(location.href);
+              instaRedirect.isWindowFocused();
+              instaRedirect.openInBrowser(location.href);
             }
 
         })();
