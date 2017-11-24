@@ -97,7 +97,12 @@
                         // });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('googlechrome://x-callback-url/openURL?link=' + encodeURIComponent(clearUrl));
+                        instaRedirect.setLocation('com.apple.mobilesafari://' + clearUrl);
+                        setTimeout(function() {
+                          instaRedirect.setLocation(clearUrl)
+                        }, 100);
+                        // 'googlechrome://x-callback-url/openURL?link=' + encodeURIComponent(clearUrl)
+
                         //   .then(function() {
                         //     instaRedirect.setLocation('/ios-redirect.php');
                         // });
