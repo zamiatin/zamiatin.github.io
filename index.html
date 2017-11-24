@@ -99,7 +99,7 @@
                     } else if (this.isIOS()) {
                         instaRedirect.setLocation('com.apple.mobilesafari://' + clearUrl);
                         setTimeout(function() {
-                          instaRedirect.setLocation(clearUrl)
+                          instaRedirect.setLocation(targetLink)
                         }, 100);
                         // 'googlechrome://x-callback-url/openURL?link=' + encodeURIComponent(clearUrl)
 
