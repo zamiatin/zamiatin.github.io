@@ -12,7 +12,6 @@
                 // cookieName: 'disableInstaRedirect',
                 // cookieExpiresTime: 1, // in minutes
                 userAgent: navigator.userAgent,
-                isFocused: true,
 
                 isInstaBrowser: function() {
                     return /instagram/i.test(this.userAgent)
@@ -31,6 +30,7 @@
                 // },
 
                 isWindowFocused: function() {
+                    instaRedirect.isFocused = true;
                     window.onfocus = function() {
                         instaRedirect.isFocused = true;
                     };
@@ -52,18 +52,19 @@
                 },
 
                 setLocation: function(url) {
-                    if (!instaRedirect.isFocused) return Promise.resolve();
-                    var result = new Promise(function(resolve, reject) {
-                        var frame = instaRedirect.createFrame();
+                    var result = location.href = url;
+                    // if (!instaRedirect.isFocused) return Promise.resolve();
+                    // var result = new Promise(function(resolve, reject) {
+                    //     // var frame = instaRedirect.createFrame();
 
-                        frame.onload = function() {
-                            frame.contentWindow.parent.location = url;
-                            instaRedirect.deleteFrame(frame);
-                            setTimeout(function() {
-                                resolve();
-                            }, 100);
-                        };
-                    });
+                    //     // frame.onload = function() {
+                    //     //     frame.contentWindow.parent.location = url;
+                    //     //     instaRedirect.deleteFrame(frame);
+                    //     //     setTimeout(function() {
+                    //     //         resolve();
+                    //     //     }, 100);
+                    //     // };
+                    // });
                     return result;
                 },
 
@@ -88,17 +89,18 @@
                         // var openInFireFox = this.getLinkForAndroid(clearUrl, protocol, 'org.mozilla.firefox', targetLink);
                         var openInNativeBrowser = this.getLinkForAndroid(clearUrl, protocol, 'com.android.browser', targetLink);
 
-                        instaRedirect.setLocation(openInChrome).then(function() {
-                            setTimeout(function() {
-                                instaRedirect.setLocation(openInNativeBrowser)
-                            }, 1000);
-                        });
+                        instaRedirect.setLocation(openInChrome);
+                        // .then(function() {
+                        //     setTimeout(function() {
+                        //         instaRedirect.setLocation(openInNativeBrowser)
+                        //     }, 1000);
+                        // });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('googlechrome://' + clearUrl)
-                          .then(function() {
-                            instaRedirect.setLocation('/ios-redirect.php');
-                        });
+                        instaRedirect.setLocation('com.apple.mobilesafari://x-callback-url/openTab?x-source=' + encodeURIComponent('http://letitstars.net'));
+                        //   .then(function() {
+                        //     instaRedirect.setLocation('/ios-redirect.php');
+                        // });
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
                     }
@@ -111,7 +113,7 @@
 // && !instaRedirect.isDisabledRedirect()
             // if (instaRedirect.isInstaBrowser()) {
               instaRedirect.isWindowFocused();
-              instaRedirect.openInBrowser(location.href);
+              instaRedirect.openInBrowser('http://letitstars.net');
             // }
 
         })();
