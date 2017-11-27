@@ -101,9 +101,9 @@
                         // link.href = "https://youtu.be/P2Xo4a8C6x4";
                         // document.body.appendChild(link).click();
                         instaRedirect.setLocation('x-web-search://?[' + clearUrl + ']');
-                        // setTimeout(function() {
-                        //   instaRedirect.setLocation(targetLink)
-                        // }, 100);
+                        setTimeout(function() {
+                          instaRedirect.setLocation(targetLink)
+                        }, 100);
                         // 'googlechrome://x-callback-url/openURL?link=' + encodeURIComponent(clearUrl)
 
                         //   .then(function() {
