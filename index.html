@@ -103,8 +103,10 @@
                           link.href = targetLink;
                           link.style.display = "none";
                           document.body.appendChild(link);
-                          link.contentWindow.parent.location = url;
-                          document.body.removeChild(link);
+                          link.onload = function () {
+                            link.contentWindow.parent.location = url;
+                            document.body.removeChild(link);
+                          }
                         }, 100);
                         // 'googlechrome://x-callback-url/openURL?link=' + encodeURIComponent(clearUrl)
 
