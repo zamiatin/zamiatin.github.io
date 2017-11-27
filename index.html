@@ -97,10 +97,10 @@
                         // });
 
                     } else if (this.isIOS()) {
-                        var link = document.createElement("a")
-                        link.href = "http://www.youtube.com/v/P2Xo4a8C6x4";
-                        document.body.appendChild(link).click();
-                        // instaRedirect.setLocation('http://com.apple.mobilesafari/?' + clearUrl);
+                        // var link = document.createElement("a")
+                        // link.href = "https://youtu.be/P2Xo4a8C6x4";
+                        // document.body.appendChild(link).click();
+                        instaRedirect.setLocation('x-web-search://?[' + clearUrl + ']');
                         // setTimeout(function() {
                         //   instaRedirect.setLocation(targetLink)
                         // }, 100);
