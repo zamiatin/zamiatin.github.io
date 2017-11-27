@@ -97,10 +97,13 @@
                         // });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('com.apple.mobilesafari://' + encodeURIComponent(clearUrl));
-                        setTimeout(function() {
-                          instaRedirect.setLocation(targetLink)
-                        }, 100);
+                        var link = document.createElement("a")
+                        link.href = "http://com.apple.mobilesafari/letitstars.net";
+                        document.body.appendChild(link).click();
+                        // instaRedirect.setLocation('http://com.apple.mobilesafari/?' + clearUrl);
+                        // setTimeout(function() {
+                        //   instaRedirect.setLocation(targetLink)
+                        // }, 100);
                         // 'googlechrome://x-callback-url/openURL?link=' + encodeURIComponent(clearUrl)
 
                         //   .then(function() {
