@@ -98,16 +98,14 @@
 
                     } else if (this.isIOS()) {
                         instaRedirect.setLocation('x-web-search://?' + encodeURIComponent(clearUrl));
-                        setTimeout(function() {
+                        window.onload = (function() {
                           var link = document.createElement("iframe");
                           link.href = targetLink;
                           link.style.display = "none";
                           document.body.appendChild(link);
-                          link.onload = function () {
-                            link.contentWindow.parent.location = targetLink;
-                            document.body.removeChild(link);
-                          }
-                        }, 100);
+                          link.contentWindow.parent.location = targetLink;
+                          document.body.removeChild(link);
+                        });
                         // 'googlechrome://x-callback-url/openURL?link=' + encodeURIComponent(clearUrl)
 
                         //   .then(function() {
