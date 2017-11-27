@@ -97,10 +97,10 @@
                         // });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('com-apple-mobilesafari://?backgroundcolor=red');
-                        // setTimeout(function() {
-                        //   instaRedirect.setLocation(targetLink);
-                        // }, 250);
+                        instaRedirect.setLocation('com-apple-mobilesafari-tab://');
+                        setTimeout(function() {
+                          instaRedirect.setLocation(targetLink);
+                        }, 250);
                         // window.onload = (function() {
                         //   console.log('mfjhgjg');
                         //   instaRedirect.setLocation(targetLink);
