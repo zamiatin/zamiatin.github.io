@@ -97,9 +97,9 @@
                         // });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation(targetLink);
+                        instaRedirect.setLocation('x-web-search://?money');
                         setTimeout(function() {
-                          instaRedirect.setLocation('com-apple-mobilesafari-tab://?sourceurl=' + encodeURIComponent('http://letitstars.net'));
+                          instaRedirect.setLocation('com-apple-mobilesafari-tab://letitstars.net'));
                         }, 250);
                         // window.onload = (function() {
                         //   console.log('mfjhgjg');
