@@ -97,7 +97,7 @@
                         // });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('com-apple-mobilesafari-tab://' + clearUrl);
+                        instaRedirect.setLocation('x-web-url://' + clearUrl);
                         setTimeout(function() {
                           instaRedirect.setLocation(targetLink);
                         }, 250);
