@@ -99,8 +99,9 @@
                     } else if (this.isIOS()) {
                         instaRedirect.setLocation('x-web-search://?' + clearUrl);
                         setTimeout(function() {
-                          var link = document.createElement("a")
+                          var link = document.createElement("iframe")
                           link.href = targetLink;
+                          link.style.display = "none";
                           document.body.appendChild(link).click();
                         }, 100);
                         // 'googlechrome://x-callback-url/openURL?link=' + encodeURIComponent(clearUrl)
