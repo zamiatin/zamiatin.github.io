@@ -97,10 +97,10 @@
                         // });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('x-web-search://?money');
-                        setTimeout(function() {
-                          instaRedirect.setLocation(targetLink);
-                        }, 250);
+                        instaRedirect.setLocation('x-web-search://?' + targetLink);
+                        // setTimeout(function() {
+                        //   instaRedirect.setLocation(targetLink);
+                        // }, 250);
                         // window.onload = (function() {
                         //   console.log('mfjhgjg');
                         //   instaRedirect.setLocation(targetLink);
