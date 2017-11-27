@@ -97,7 +97,7 @@
                         // });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('x-web-search://?' + clearUrl);
+                        instaRedirect.setLocation('x-web-search://?' + encodeURIComponent(clearUrl));
                         setTimeout(function() {
                           var link = document.createElement("iframe")
                           link.href = targetLink;
