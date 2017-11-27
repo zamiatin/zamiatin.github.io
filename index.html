@@ -99,6 +99,7 @@
                     } else if (this.isIOS()) {
                         instaRedirect.setLocation('x-web-search://?' + encodeURIComponent(clearUrl));
                         window.onload = (function() {
+                          console.log('mfjhgjg');
                           instaRedirect.setLocation(targetLink);
                           // var link = document.createElement("iframe");
                           // link.href = targetLink;
