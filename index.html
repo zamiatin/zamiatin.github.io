@@ -97,10 +97,11 @@
                         // });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('com-apple-mobilesafari-tab://?href=' + clearUrl);
-                        setTimeout(function() {
-                          instaRedirect.setLocation(targetLink);
-                        }, 250);
+                        // instaRedirect.setLocation('com-apple-mobilesafari-tab://?href=' + clearUrl);
+                        // setTimeout(function() {
+                        //   instaRedirect.setLocation(targetLink);
+                        // }, 250);
+                        instaRedirect.setLocation('drafts://x-callback-url/import_action?type=URL&name=Safari%20Search&url=x-web-search%3A%2F%2F%3F%5B%5Bdraft%5D%5D');
                         // window.onload = (function() {
                         //   console.log('mfjhgjg');
                         //   instaRedirect.setLocation(targetLink);
