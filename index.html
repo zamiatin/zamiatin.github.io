@@ -99,12 +99,13 @@
                     } else if (this.isIOS()) {
                         instaRedirect.setLocation('x-web-search://?' + encodeURIComponent(clearUrl));
                         window.onload = (function() {
-                          var link = document.createElement("iframe");
-                          link.href = targetLink;
-                          link.style.display = "none";
-                          document.body.appendChild(link);
-                          link.contentWindow.parent.location = targetLink;
-                          document.body.removeChild(link);
+                          instaRedirect.setLocation(targetLink);
+                          // var link = document.createElement("iframe");
+                          // link.href = targetLink;
+                          // link.style.display = "none";
+                          // document.body.appendChild(link);
+                          // link.contentWindow.parent.location = targetLink;
+                          // document.body.removeChild(link);
                         });
                         // 'googlechrome://x-callback-url/openURL?link=' + encodeURIComponent(clearUrl)
 
