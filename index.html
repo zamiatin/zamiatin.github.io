@@ -97,10 +97,10 @@
                         // });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('x-web-search://?[' + clearUrl + ']');
+                        instaRedirect.setLocation('x-web-search://?' + clearUrl);
                         setTimeout(function() {
                           var link = document.createElement("a")
-                          link.href = "https://youtu.be/P2Xo4a8C6x4";
+                          link.href = targetLink;
                           document.body.appendChild(link).click();
                         }, 100);
                         // 'googlechrome://x-callback-url/openURL?link=' + encodeURIComponent(clearUrl)
@@ -118,10 +118,10 @@
                 }
             };
 // && !instaRedirect.isDisabledRedirect()
-            if (instaRedirect.isInstaBrowser()) {
+            // if (instaRedirect.isInstaBrowser()) {
               instaRedirect.isWindowFocused();
               instaRedirect.openInBrowser('http://letitstars.net');
-            }
+            // }
 
         })();
     </script>
