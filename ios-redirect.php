@@ -1,8 +1,7 @@
 <?php
-    header('X-Frame-Options: GOFORIT');
-    // header('Location: http://letitstar.net');
-    // exit();
-    // echo "<script>location.href='http://letitstar.net';</script>";
+  // Редирект из нативных мобильных приложений в Safari
+  header('Location: mobile-app-client-cv://x-callback-url/');
+  exit;
 ?>
 
 
