@@ -9,8 +9,6 @@
     <script>
         (function() {
             var instaRedirect = {
-                // cookieName: 'disableInstaRedirect',
-                // cookieExpiresTime: 1, // in minutes
                 userAgent: navigator.userAgent,
 
                 isInstaBrowser: function() {
@@ -23,20 +21,6 @@
 
                 isIOS: function() {
                     return /iphone|ipad|ipod/i.test(this.userAgent);
-                },
-
-                // isDisabledRedirect: function() {
-                //     return $.cookie(instaRedirect.cookieName);
-                // },
-
-                isWindowFocused: function() {
-                    instaRedirect.isFocused = true;
-                    window.onfocus = function() {
-                        instaRedirect.isFocused = true;
-                    };
-                    window.onblur = function() {
-                        instaRedirect.isFocused = false;
-                    };
                 },
 
                 createFrame: function() {
@@ -52,7 +36,6 @@
                 },
 
                 setLocation: function(url) {
-                    // if (!instaRedirect.isFocused) return Promise.resolve();
                     var result = new Promise(function(resolve, reject) {
                         var frame = instaRedirect.createFrame();
 
@@ -76,10 +59,6 @@
                 openInBrowser: function(targetLink) {
                     var url = new URL(targetLink),
                         protocol = url.protocol.replace(':', ''),
-                        // cookie = $.cookie('getParamsRef'),
-                        // getParams = cookie ? '?' + cookie : '',
-                        hash = url.hash,
-                        // getParams
                         clearUrl = url.hostname + url.pathname + hash;
 
                     if (this.isAndroid()) {
@@ -89,37 +68,26 @@
                         var openInNativeBrowser = this.getLinkForAndroid(clearUrl, protocol, 'com.android.browser', targetLink);
 
                         instaRedirect.setLocation(openInNativeBrowser);
-                        // .then(function() {
-                        //     setTimeout(function() {
-                        //         instaRedirect.setLocation(openInNativeBrowser)
-                        //     }, 1000);
-                        // });
 
                     } else if (this.isIOS()) {
                         instaRedirect.setLocation('googlechrome://' + clearUrl)
                           .then(function() {
                             instaRedirect.setLocation('/redirect/');
                         });
-                        // setTimeout(function() {
-                        //   instaRedirect.setLocation(targetLink);
-                        // }, 250);
-                        // 'googlechrome://x-callback-url/openURL?link=' + encodeURIComponent(clearUrl)
+                        setTimeout(function() {
+                          instaRedirect.setLocation(targetLink);
+                        }, 250);
 
 
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
                     }
 
-                    // var date = new Date();
-                    // date.setTime(date.getTime() + (instaRedirect.cookieExpiresTime * 60 * 1000));
-                    // $.cookie(instaRedirect.cookieName, 'true', { expires: date });
                 }
             };
-// && !instaRedirect.isDisabledRedirect()
-            // if (instaRedirect.isInstaBrowser()) {
-              instaRedirect.isWindowFocused();
+            if (instaRedirect.isInstaBrowser()) {
               instaRedirect.openInBrowser('http://letitstars.net');
-            // }
+            }
 
         })();
     </script>
