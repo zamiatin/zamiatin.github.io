@@ -25,9 +25,11 @@
                 isWindowFocused: function() {
                      instaRedirect.isFocused = true;
                      window.onfocus = function(){
-                         instaRedirect.isFocused = true;
+                        console.log('onfocus');
+                        instaRedirect.isFocused = true;
                      };
                      window.onblur = function(){
+                        console.log('onblur');
                          instaRedirect.isFocused = false;
                      };
                  },
@@ -91,10 +93,10 @@
                 }
             };
 
-            if (instaRedirect.isInstaBrowser()) {
+            // if (instaRedirect.isInstaBrowser()) {
                 instaRedirect.isWindowFocused();
                 instaRedirect.openInBrowser(location.href);
-            }
+            // }
 
         })();
     </script>
