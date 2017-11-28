@@ -68,7 +68,7 @@
                 openInBrowser: function(targetLink) {
                     var url = new URL(targetLink),
                         protocol = url.protocol.replace(':', ''),
-                        clearUrl = url.hostname + url.pathname + hash;
+                        clearUrl = url.pathname;
 
                     if (this.isAndroid()) {
                         var openInChrome = this.getLinkForAndroid(clearUrl, protocol, 'com.android.chrome', targetLink);
