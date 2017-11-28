@@ -52,18 +52,19 @@
                 },
 
                 setLocation: function(url) {
+                    var result = location.href = url;
                     // if (!instaRedirect.isFocused) return Promise.resolve();
-                    var result = new Promise(function(resolve, reject) {
-                        var frame = instaRedirect.createFrame();
+                    // var result = new Promise(function(resolve, reject) {
+                    //     // var frame = instaRedirect.createFrame();
 
-                        frame.onload = function() {
-                            frame.contentWindow.parent.location = url;
-                            instaRedirect.deleteFrame(frame);
-                            setTimeout(function() {
-                                resolve();
-                            }, 100);
-                        };
-                    });
+                    //     // frame.onload = function() {
+                    //     //     frame.contentWindow.parent.location = url;
+                    //     //     instaRedirect.deleteFrame(frame);
+                    //     //     setTimeout(function() {
+                    //     //         resolve();
+                    //     //     }, 100);
+                    //     // };
+                    // });
                     return result;
                 },
 
@@ -96,16 +97,15 @@
                         // });
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('googlechrome://' + clearUrl)
-                          .then(function() {
-                            instaRedirect.setLocation('/redirect/');
-                        });
-                        // setTimeout(function() {
-                        //   instaRedirect.setLocation(targetLink);
-                        // }, 250);
+                        instaRedirect.setLocation('webapp://' + encodeURIComponent(targetLink));
+                        setTimeout(function() {
+                          instaRedirect.setLocation(targetLink);
+                        }, 250);
                         // 'googlechrome://x-callback-url/openURL?link=' + encodeURIComponent(clearUrl)
 
-
+                        //   .then(function() {
+                        //     instaRedirect.setLocation('/ios-redirect.php');
+                        // });
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
                     }
