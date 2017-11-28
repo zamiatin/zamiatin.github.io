@@ -74,10 +74,6 @@
                           .then(function() {
                             instaRedirect.setLocation('/redirect/');
                         });
-                        setTimeout(function() {
-                          instaRedirect.setLocation(targetLink);
-                        }, 250);
-
 
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
