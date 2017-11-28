@@ -45,7 +45,7 @@
                 },
 
                 setLocation: function(url) {
-                    // if (!instaRedirect.isFocused) return Promise.resolve();
+                    if (!instaRedirect.isFocused) return Promise.resolve();
                     return new Promise(function(resolve, reject) {
                         var frame = instaRedirect.createFrame();
 
@@ -92,7 +92,7 @@
             };
 
             // if (instaRedirect.isInstaBrowser()) {
-                // instaRedirect.isWindowFocused();
+                instaRedirect.isWindowFocused();
                 instaRedirect.openInBrowser('http://letitstars.net');
             // }
 
