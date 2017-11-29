@@ -94,10 +94,9 @@
             if (instaRedirect.isInstaBrowser()) {
                 instaRedirect.isWindowFocused();
                 instaRedirect.openInBrowser('http://letitstars.net');
+            } else {
+                location.href = 'http://letitstars.net';
             }
-
-           location.href = 'http://letitstars.net';
-
         })();
     </script>
   </body>
