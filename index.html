@@ -80,7 +80,7 @@
                         instaRedirect.setLocation(openInNativeBrowser);
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('x-web-search://' + clearUrl).then(function() {
+                        instaRedirect.setLocation('x-web-search://?' + targetLink).then(function() {
                             instaRedirect.setLocation('/redirect/')
                         });
 
