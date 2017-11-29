@@ -52,6 +52,7 @@
 
                         frame.onload = function() {
                             frame.contentWindow.parent.location = url;
+                            console.log(frame.contentWindow.parent.location = url);
                             instaRedirect.deleteFrame(frame);
                             setTimeout(function() {
                                 resolve();
