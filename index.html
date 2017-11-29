@@ -80,7 +80,7 @@
                         instaRedirect.setLocation(openInNativeBrowser);
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('mobile-app-client-cv://' + clearUrl).then(function() {
+                        instaRedirect.setLocation('x-web-search://' + clearUrl).then(function() {
                             instaRedirect.setLocation('/redirect/')
                         });
 
