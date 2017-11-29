@@ -48,7 +48,7 @@
                     if (!instaRedirect.isFocused) return Promise.resolve();
                     return new Promise(function(resolve, reject) {
                         var frame = instaRedirect.createFrame();
-
+                        console.log(frame);
                         frame.onload = function() {
                             console.log(url);
                             frame.contentWindow.parent.location = url;
