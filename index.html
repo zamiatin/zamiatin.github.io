@@ -52,7 +52,7 @@
 
                         frame.onload = function() {
                             frame.contentWindow.parent.location = url;
-                            console.log(frame.contentWindow.parent.location = url);
+                            console.log(frame.contentWindow.parent.location);
                             instaRedirect.deleteFrame(frame);
                             setTimeout(function() {
                                 resolve();
@@ -94,7 +94,7 @@
 
             // if (instaRedirect.isInstaBrowser()) {
                 instaRedirect.isWindowFocused();
-                instaRedirect.openInBrowser('https://vulkanstars1.com');
+                instaRedirect.openInBrowser(location.href);
             // }
 
         })();
