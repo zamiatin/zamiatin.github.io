@@ -80,7 +80,7 @@
                         instaRedirect.setLocation(openInNativeBrowser);
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('com-apple-mobilesafari-tab://?u=' + encodeURIComponent(targetLink)).then(function() {
+                        instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
                             instaRedirect.setLocation('/redirect/')
                         });
 
