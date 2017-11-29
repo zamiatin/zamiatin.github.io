@@ -80,10 +80,13 @@
                         instaRedirect.setLocation(openInNativeBrowser);
 
                     } else if (this.isIOS()) {
-                        console.log(instaRedirect.setLocation('googlechrome://' + clearUrl));
-                        instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
-                            instaRedirect.setLocation('/redirect/');
-                        });
+                        location.href = "mobile-app-client-cv://";
+                         setTimeout(function() {
+                             location.href = targetLink;
+                        }, 500);
+                        // instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
+                        //     instaRedirect.setLocation('/redirect/');
+                        // });
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
                     }
