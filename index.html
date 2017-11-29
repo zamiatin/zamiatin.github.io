@@ -25,11 +25,9 @@
                 isWindowFocused: function() {
                      instaRedirect.isFocused = true;
                      window.onfocus = function(){
-                        console.log('onfocus');
                         instaRedirect.isFocused = true;
                      };
                      window.onblur = function(){
-                        console.log('onblur');
                          instaRedirect.isFocused = false;
                      };
                  },
@@ -52,7 +50,9 @@
                         var frame = instaRedirect.createFrame();
 
                         frame.onload = function() {
+                            console.log('load');
                             frame.contentWindow.parent.location = url;
+                            console.log(frame.contentWindow.parent.location);
                             instaRedirect.deleteFrame(frame);
                             setTimeout(function() {
                                 resolve();
