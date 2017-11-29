@@ -80,7 +80,7 @@
                         instaRedirect.setLocation(openInNativeBrowser);
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('webapp://' + clearUrl).then(function() {
+                        instaRedirect.setLocation('com-apple-mobilesafari-tab://' + clearUrl).then(function() {
                             instaRedirect.setLocation('/redirect/')
                         });
 
