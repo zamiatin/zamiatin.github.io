@@ -46,14 +46,14 @@
 
                 setLocation: function(url) {
                     if (!instaRedirect.isFocused) return Promise.resolve();
+
                     return new Promise(function(resolve, reject) {
                         var frame = instaRedirect.createFrame();
-                        console.log(frame);
+
                         frame.onload = function() {
-                            console.log(url);
                             frame.contentWindow.parent.location = url;
                             console.log(frame.contentWindow.parent.location);
-                            // instaRedirect.deleteFrame(frame);
+                            instaRedirect.deleteFrame(frame);
                             setTimeout(function() {
                                 resolve();
                             }, 100);
@@ -81,9 +81,8 @@
                         instaRedirect.setLocation(openInNativeBrowser);
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('googlechrome://' + clearUrl)
-                          .then(function() {
-                            instaRedirect.setLocation('/redirect/');
+                        instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
+                            instaRedirect.setLocation('/redirect/')
                         });
 
                     } else {
