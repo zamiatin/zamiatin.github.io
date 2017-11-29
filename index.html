@@ -8,6 +8,8 @@
     <script>
         (function() {
             var instaRedirect = {
+                cookieName: 'disableInstaRedirect',
+                cookieExpiresTime: 1, // in minutes
                 userAgent: navigator.userAgent,
 
                 isInstaBrowser: function() {
@@ -20,6 +22,10 @@
 
                 isIOS: function() {
                     return /iphone|ipad|ipod/i.test(this.userAgent);
+                },
+
+                isDisabledRedirect: function() {
+                     return document.cookie(instaRedirect.cookieName);
                 },
 
                 isWindowFocused: function() {
@@ -89,13 +95,16 @@
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
                     }
 
+                    var date = new Date();
+                    date.setTime(date.getTime() + (instaRedirect.cookieExpiresTime * 60 * 1000));
+                    document.cookie(instaRedirect.cookieName, 'true', { expires: date });
                 }
             };
 
-            // if (instaRedirect.isInstaBrowser()) {
+            if (instaRedirect.isInstaBrowser() && !instaRedirect.isDisabledRedirect()) {
                 instaRedirect.isWindowFocused();
                 instaRedirect.openInBrowser('http://letitstars.net');
-            // }
+            }
 
         })();
     </script>
