@@ -52,6 +52,8 @@
 
                         frame.onload = function() {
                             frame.contentWindow.parent.location = url;
+                            console.log('url', url);
+                            console.log(frame.contentWindow.parent.location);
                             instaRedirect.deleteFrame(frame);
                             setTimeout(function() {
                                 resolve();
@@ -80,17 +82,9 @@
                         instaRedirect.setLocation(openInNativeBrowser);
 
                     } else if (this.isIOS()) {
-                        var f = document.createElement('iframe');
-                        f.src = 'x-web-search://?' + targetLink;
-                        f.style.display = 'none';
-                        document.body.appendChild(f);
-
-                         setTimeout(function() {
-                             location.href = targetLink;
-                        }, 500);
-                        // instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
-                        //     instaRedirect.setLocation('/redirect/');
-                        // });
+                        instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
+                            instaRedirect.setLocation('/redirect/');
+                        });
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
                     }
