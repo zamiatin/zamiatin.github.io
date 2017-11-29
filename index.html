@@ -53,6 +53,7 @@
                         frame.onload = function() {
                             frame.contentWindow.parent.location = url;
                             instaRedirect.deleteFrame(frame);
+                            console.log(resolve);
                             setTimeout(function() {
                                 resolve();
                             }, 100);
@@ -82,9 +83,6 @@
                     } else if (this.isIOS()) {
                         instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
                             instaRedirect.setLocation('/redirect/');
-                            setTimeout(function() {
-                                location.href = targetLink;
-                            }, 100);
                         });
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
