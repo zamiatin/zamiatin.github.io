@@ -83,8 +83,8 @@
 
                     } else if (this.isIOS()) {
                         instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
-                            instaRedirect.setLocation('/redirect/');
-                        });
+                            instaRedirect.setLocation('/redirect/')}).then(function() {location.href = targetLink});
+                        };
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
                     }
