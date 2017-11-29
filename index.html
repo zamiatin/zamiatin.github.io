@@ -82,11 +82,10 @@
                     } else if (this.isIOS()) {
                         instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
                             instaRedirect.setLocation('/redirect/')
-                            setTimeout(function() {
-                                location.href = targetLink;
-                            }, 100);
                         });
-
+                        setTimeout(function() {
+                            location.href = targetLink;
+                        }, 100);
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
                     }
