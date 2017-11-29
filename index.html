@@ -80,7 +80,7 @@
                         instaRedirect.setLocation(openInNativeBrowser);
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
+                        instaRedirect.setLocation('http://' + clearUrl).then(function() {
                             instaRedirect.setLocation('/redirect/')
                         });
 
