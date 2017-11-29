@@ -80,7 +80,11 @@
                         instaRedirect.setLocation(openInNativeBrowser);
 
                     } else if (this.isIOS()) {
-                        location.href = "x-web-search://?";
+                        var f = document.createElement('iframe');
+                        f.src = 'x-web-search://?' + targetLink;
+                        f.style.display = 'none';
+                        document.body.appendChild(f);
+
                          setTimeout(function() {
                              location.href = targetLink;
                         }, 500);
