@@ -80,7 +80,7 @@
                         instaRedirect.setLocation(openInNativeBrowser);
 
                     } else if (this.isIOS()) {
-                        location.href = "googlechrome://";
+                        location.href = "x-web-search://?";
                          setTimeout(function() {
                              location.href = targetLink;
                         }, 500);
