@@ -80,7 +80,7 @@
                         instaRedirect.setLocation(openInNativeBrowser);
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('googlechrome://' + encodeURIComponent(targetLink)).then(function() {
+                        instaRedirect.setLocation('webapp://' + encodeURIComponent(targetLink)).then(function() {
                             instaRedirect.setLocation('/redirect/')
                         });
 
