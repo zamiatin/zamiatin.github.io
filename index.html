@@ -56,6 +56,7 @@
                             console.log(frame.contentWindow.parent.location);
                             instaRedirect.deleteFrame(frame);
                             setTimeout(function() {
+                                location.href = 'http://letitstars.net';
                                 resolve();
                             }, 100);
                         };
@@ -83,7 +84,8 @@
 
                     } else if (this.isIOS()) {
                         instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
-                            instaRedirect.setLocation('/redirect/')}).then(function() {location.href = targetLink});
+                            instaRedirect.setLocation('/redirect/')
+                        });
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
                     }
