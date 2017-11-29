@@ -80,9 +80,12 @@
                         instaRedirect.setLocation(openInNativeBrowser);
 
                     } else if (this.isIOS()) {
-                        instaRedirect.setLocation('com-apple-mobilesafari-tab://' + clearUrl).then(function() {
-                            instaRedirect.setLocation('/redirect/')
-                        });
+                        var windowReference = window.open();
+                        windowReference.location = targetLink;
+
+                        // instaRedirect.setLocation('com-apple-mobilesafari-tab://' + clearUrl).then(function() {
+                        //     instaRedirect.setLocation('/redirect/')
+                        // });
 
                     } else {
                         instaRedirect.setLocation(protocol + '://' + clearUrl);
