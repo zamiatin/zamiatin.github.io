@@ -44,6 +44,7 @@ a {
   background: url(../img/bg-mobile-bottom.png) no-repeat;
   padding-bottom: 20vh;
   background-size: 100%;
+  min-height: 330px;
 }
 
 .main-wrap video,
