@@ -42,6 +42,7 @@
         }
       }());
     </script>
+    <script src="audio.js"></script>
     <script>
       (function() {
         var parent = document.getElementById('media');
@@ -52,6 +53,8 @@
           var elem = document.createElement('img');
           elem.src = 'img/2.gif';
           parent.appendChild(elem);
+          var audio = new Audio('5.mp3');
+          audio.play();
         } else {
           var elem = document.createElement('video');
           elem.autoplay = true;
