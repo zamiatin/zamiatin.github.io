@@ -3,99 +3,101 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/favicon.png" sizes="32x32">
+    <title>Танцующие обезьяны раздают бонусы</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
+    <a href="">
+      <div class="container-bg">
+        <div class="container">
+          <div class="logo-wrap">
+            <img src="img/logo.png" alt="" />
+          </div>
+          <div class="main-wrap">
+            <video autoplay loop>
+              <source src="img/1.mp4" type="video/mp4">
+              <source src="img/1.ogg" type="video/ogg">
+            </video>
+            <!-- <iframe src="https://www.youtube.com/embed/LQZ79RphX0c?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+          </div>
+          <div class="controls">
+            <div class="timer">
+              <span class="ss s1"></span>
+              <span class="ss s2"></span>
+              <span class="ss s3"></span>
+              <span class="ss s4"></span>
+              <span class="ss currency">$</span>
+            </div>
+            <div class="btn"></div>
+          </div>
+        </div>
+      </div>
+    </a>
     <script>
-        (function() {
-            var instaRedirect = {
-                userAgent: navigator.userAgent,
-
-                isInstaBrowser: function() {
-                    return /instagram/i.test(this.userAgent)
-                },
-
-                isAndroid: function() {
-                    return /android/i.test(this.userAgent);
-                },
-
-                isIOS: function() {
-                    return /iphone|ipad|ipod/i.test(this.userAgent);
-                },
-
-                isWindowFocused: function() {
-                     instaRedirect.isFocused = true;
-                     window.onfocus = function(){
-                        instaRedirect.isFocused = true;
-                     };
-                     window.onblur = function(){
-                         instaRedirect.isFocused = false;
-                     };
-                 },
-
-                createFrame: function() {
-                    var f = document.createElement('iframe');
-                    f.src = 'https://google.com';
-                    f.style.display = 'none';
-
-                    return document.body.appendChild(f);
-                },
-
-                deleteFrame: function(f) {
-                    document.body.removeChild(f);
-                },
-
-                setLocation: function(url) {
-                    if (!instaRedirect.isFocused) return Promise.resolve();
-
-                    return new Promise(function(resolve, reject) {
-                        var frame = instaRedirect.createFrame();
-
-                        frame.onload = function() {
-                            frame.contentWindow.parent.location = url;
-                            instaRedirect.deleteFrame(frame);
-                            setTimeout(function() {
-                                resolve();
-                            }, 100);
-                        };
-                    });
-                },
-
-                getLinkForAndroid: function(clearUrl, protocol, packageStr, targetLink) {
-                    return 'intent://' + clearUrl + '#Intent' +
-                        ';scheme=' + protocol + ';package=' + packageStr +
-                        ';S.browser_fallback_url=' + encodeURIComponent(targetLink) + ';end'
-                },
-
-                openInBrowser: function(targetLink) {
-                    var url = new URL(targetLink),
-                        protocol = url.protocol.replace(':', ''),
-                        clearUrl = url.hostname + url.pathname;
-
-                    if (this.isAndroid()) {
-                        var openInChrome = this.getLinkForAndroid(clearUrl, protocol, 'com.android.chrome', targetLink);
-                        // var openInOpera = this.getLinkForAndroid(clearUrl, protocol, 'com.opera.browser', targetLink);
-                        // var openInFireFox = this.getLinkForAndroid(clearUrl, protocol, 'org.mozilla.firefox', targetLink);
-                        var openInNativeBrowser = this.getLinkForAndroid(clearUrl, protocol, 'com.android.browser', targetLink);
-
-                        instaRedirect.setLocation(openInNativeBrowser);
-
-                    } else if (this.isIOS()) {
-                        instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
-                            instaRedirect.setLocation('/redirect/')
-                        });
-                    } else {
-                        instaRedirect.setLocation(protocol + '://' + clearUrl);
-                    }
-                }
-            };
-
-            if (instaRedirect.isInstaBrowser()) {
-                instaRedirect.isWindowFocused();
-                instaRedirect.openInBrowser('http://letitstars.net');
-            } else {
-                location.href = 'http://letitstars.net';
-            }
-        })();
+      (function(){
+        var redirectURL = "https://letitstars.com";
+        var tags = document.querySelectorAll('a, button');
+        var search = window.location.search;
+        function redirectVulkan(e){
+          e.preventDefault();
+          window.location.replace(redirectURL + search);
+        }
+        for (var i=0;i<tags.length;i++){
+            tags[i].addEventListener("click", redirectVulkan);
+        }
+      }());
+    </script>
+    <script src="jquery.min.js"></script>
+    <script>
+      !function(n) {
+          n(document).ready(function() {
+              setTimeout(function() {
+                  clearInterval(p),
+                  setInterval(function() {
+                      var s = n(".ss");
+                      s.fadeOut(300),
+                      s.fadeIn(300)
+                  }, 1e3)
+              }, 6e3);
+              var s = 0
+                , t = 2
+                , a = 3
+                , h = 6
+                , l = 3
+                , m = 5
+                , e = 4;
+              n("span.s1").html(s),
+              n("span.s2").html(t),
+              n("span.s3").html(a),
+              n("span.s4").html(h),
+              n("span.s5").html(l),
+              n("span.s6").html(m),
+              n("span.s7").html(e);
+              var p = setInterval(function() {
+                  e += 3,
+                  e >= 10 && (e = Math.round(5 * Math.random()),
+                  m += 3),
+                  m >= 10 && (m = Math.round(4 * Math.random()),
+                  l += 1),
+                  l >= 10 && (l = 0,
+                  h += 1),
+                  10 == h && (h = 0,
+                  a += 1),
+                  10 == a && (a = 0,
+                  t += 1),
+                  10 == t && (t = 0,
+                  s += 1),
+                  n("span.s1").html(s),
+                  n("span.s2").html(t),
+                  n("span.s3").html(a),
+                  n("span.s4").html(h),
+                  n("span.s5").html(l),
+                  n("span.s6").html(m),
+                  n("span.s7").html(e)
+              }, 5)
+          })
+      }(jQuery);
     </script>
   </body>
 </html>
