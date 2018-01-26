@@ -14,14 +14,14 @@
           <div class="logo-wrap">
             <img src="img/logo.png" alt="" />
           </div>
-          <div class="main-wrap">
-            <video playsinline autoplay loop muted>
+          <div class="main-wrap" id='media'>
+<!--             <video playsinline autoplay loop muted>
               <source src="img/1.mp4" type="video/mp4">
               <source src="img/1.ogg" type="video/ogg">
-            </video>
-            <audio autoplay>
+            </video> -->
+<!--             <audio autoplay>
               <source src="5.mp3" type="audio/ogg">
-            </audio>
+            </audio> -->
             <!-- <iframe src="https://www.youtube.com/embed/LQZ79RphX0c?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
           </div>
           <div class="controls">
@@ -48,6 +48,29 @@
         }
         for (var i=0;i<tags.length;i++){
             tags[i].addEventListener("click", redirectVulkan);
+        }
+      }());
+    </script>
+    <script>
+      (function() {
+        var parent = document.getElementById('media');
+        function isMobile() {
+          return /iphone|ipod|android/i.test(navigator.userAgent);
+        };
+        if (isMobile()) {
+          var elem = document.createElement('img');
+          elem.src = 'img/2.gif';
+          parent.appendChild(elem);
+        } else {
+          var elem = document.createElement('video');
+          elem.autoplay = true;
+          elem.loop = true;
+          parent.appendChild(elem);
+          var video = document.querySelector('video');
+          var source = document.createElement('source');
+          source.src = 'img/1.mp4';
+          source.type = 'video/mp4';
+          video.appendChild(source);
         }
       }());
     </script>

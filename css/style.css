@@ -46,7 +46,8 @@ a {
   background-size: 100%;
 }
 
-.main-wrap video {
+.main-wrap video,
+.main-wrap img {
   display: block;
   margin: 0 auto;
   width: 82%;
