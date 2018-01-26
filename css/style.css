@@ -226,7 +226,9 @@ a {
 
   .main-wrap {
     padding-bottom: 20vh;
-    min-height: auto;
+    min-height: 180px;
+    background: url(../img/bg-mobile-bottom.png) no-repeat;
+    background-size: 100%;
   }
 
   .main-wrap video,
@@ -239,7 +241,18 @@ a {
     display: none;
   }
 
+  .controls {
+    position: relative;
+    margin: 0 auto;
+    left: 0;
+    bottom: 0;
+    transform: none;
+  }
+
   .btn {
     margin: 15px auto 0;
+    width: 100%;
+    max-width: 250px;
+    height: 50px;
   }
 }

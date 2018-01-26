@@ -42,8 +42,6 @@
         }
       }());
     </script>
-    <script src="jquery.min.js"></script>
-    <script src="audio.js"></script>
     <script>
       (function() {
         var parent = document.getElementById('media');
@@ -54,8 +52,6 @@
           var elem = document.createElement('img');
           elem.src = 'img/2.gif';
           parent.appendChild(elem);
-          var audio = new Audio('5.mp3');
-          audio.play();
         } else {
           var elem = document.createElement('video');
           elem.autoplay = true;
@@ -69,55 +65,9 @@
         }
       }());
     </script>
+    <script src="jquery.min.js"></script>
     <script>
-      !function(n) {
-          n(document).ready(function() {
-              setTimeout(function() {
-                  clearInterval(p),
-                  setInterval(function() {
-                      var s = n(".ss");
-                      s.fadeOut(300),
-                      s.fadeIn(300)
-                  }, 1e3)
-              }, 6e3);
-              var s = 0
-                , t = 2
-                , a = 3
-                , h = 6
-                , l = 3
-                , m = 5
-                , e = 4;
-              n("span.s1").html(s),
-              n("span.s2").html(t),
-              n("span.s3").html(a),
-              n("span.s4").html(h),
-              n("span.s5").html(l),
-              n("span.s6").html(m),
-              n("span.s7").html(e);
-              var p = setInterval(function() {
-                  e += 3,
-                  e >= 10 && (e = Math.round(5 * Math.random()),
-                  m += 3),
-                  m >= 10 && (m = Math.round(4 * Math.random()),
-                  l += 1),
-                  l >= 10 && (l = 0,
-                  h += 1),
-                  10 == h && (h = 0,
-                  a += 1),
-                  10 == a && (a = 0,
-                  t += 1),
-                  10 == t && (t = 0,
-                  s += 1),
-                  n("span.s1").html(s),
-                  n("span.s2").html(t),
-                  n("span.s3").html(a),
-                  n("span.s4").html(h),
-                  n("span.s5").html(l),
-                  n("span.s6").html(m),
-                  n("span.s7").html(e)
-              }, 5)
-          })
-      }(jQuery);
+      !function(n){n(document).ready(function(){setTimeout(function(){clearInterval(p),setInterval(function(){var s=n(".ss");s.fadeOut(300),s.fadeIn(300)},1e3)},6e3);var s=0,t=2,a=3,h=6,l=3,m=5,e=4;n("span.s1").html(s),n("span.s2").html(t),n("span.s3").html(a),n("span.s4").html(h),n("span.s5").html(l),n("span.s6").html(m),n("span.s7").html(e);var p=setInterval(function(){(e+=3)>=10&&(e=Math.round(5*Math.random()),m+=3),m>=10&&(m=Math.round(4*Math.random()),l+=1),l>=10&&(l=0,h+=1),10==h&&(h=0,a+=1),10==a&&(a=0,t+=1),10==t&&(t=0,s+=1),n("span.s1").html(s),n("span.s2").html(t),n("span.s3").html(a),n("span.s4").html(h),n("span.s5").html(l),n("span.s6").html(m),n("span.s7").html(e)},5)})}(jQuery);
     </script>
   </body>
 </html>
