@@ -122,46 +122,17 @@ a {
 
 @media screen and (min-width: 768px) {
   .container-bg {
-    background: url(../img/bg-main-sm.jpg) no-repeat;
+    background: url(../img/bg-main.jpg) no-repeat;
     background-size: 100%;
   }
 
   .container {
     width: 85%;
-    max-width: 550px;
+    max-width: 520px;
   }
 
   .logo-wrap img {
     max-width: 31%;
-  }
-
-  .main-wrap {
-    padding-bottom: 175px;
-  }
-
-  .main-wrap video {
-    height: 265px;
-    max-height: 285px;
-  }
-
-  .btn {
-    margin: 30px auto 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .container-bg {
-    background: url(../img/bg-main.jpg) no-repeat;
-    background-size: 100%;
-  }
-
-  // .container {
-  //   max-width: 700px;
-  // }
-
-  .logo-wrap {
-    background: url(../img/bg-main-header.png) no-repeat center bottom;
-    background-size: 98%;
   }
 
   .main-wrap {
@@ -171,14 +142,8 @@ a {
   }
 
   .main-wrap video {
-    height: 285px;
-  }
-
-  .controls {
-    position: absolute;
-    left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%);
+    height: 265px;
+    max-height: 285px;
   }
 
   .timer {
@@ -209,6 +174,13 @@ a {
     background: #000;
   }
 
+  .controls {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+  }
+
   .btn {
     width: 425px;
     max-width: 425px;
@@ -230,6 +202,10 @@ a {
   .main-wrap video {
     height: 486px;
     max-height: 486px;
+  }
+
+  .controls {
+    bottom: 0;
   }
 }
 
