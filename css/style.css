@@ -238,7 +238,8 @@ a {
     padding-bottom: 20vh;
   }
 
-  .main-wrap video {
+  .main-wrap video,
+  .main-wrap img {
     height: 33vh;
     max-height: 105px;
   }
