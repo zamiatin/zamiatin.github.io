@@ -188,13 +188,14 @@ a {
     margin: 30px auto 0;
   }
 }
-
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 1024px) {
   .container-bg {
     background: url(../img/bg-main-xl.jpg) no-repeat;
     background-size: 100%;
   }
+}
 
+@media screen and (min-width: 1800px) {
   .container {
     max-width: 940px;
   }
