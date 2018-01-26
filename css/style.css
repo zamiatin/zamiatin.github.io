@@ -37,7 +37,7 @@ a {
 }
 
 .logo-wrap img {
-  max-width: 45%;
+  max-width: 37%;
 }
 
 .main-wrap {
@@ -128,16 +128,20 @@ a {
 
   .container {
     width: 85%;
-    max-width: 655px;
+    max-width: 550px;
+  }
+
+  .logo-wrap img {
+    max-width: 31%;
   }
 
   .main-wrap {
-    padding-bottom: 215px;
+    padding-bottom: 175px;
   }
 
   .main-wrap video {
-    height: 317px;
-    max-height: 317px;
+    height: 265px;
+    max-height: 285px;
   }
 
   .btn {
@@ -163,13 +167,12 @@ a {
   .main-wrap {
     background: url(../img/bg-main-bottom.png) no-repeat;
     background-size: 100%;
-    padding-bottom: 315px;
+    padding-bottom: 285px;
   }
 
-  // .main-wrap video {
-  //   height: 360px;
-  //   max-height: 360px;
-  // }
+  .main-wrap video {
+    height: 285px;
+  }
 
   .controls {
     position: absolute;
@@ -246,6 +249,7 @@ a {
 
   .main-wrap {
     padding-bottom: 20vh;
+    min-height: auto;
   }
 
   .main-wrap video,
