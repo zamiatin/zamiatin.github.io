@@ -15,7 +15,7 @@
             <img src="img/logo.png" alt="" />
           </div>
           <div class="main-wrap">
-            <video playsinline autoplay loop>
+            <video playsinline autoplay loop muted>
               <source src="img/1.mp4" type="video/mp4">
               <source src="img/1.ogg" type="video/ogg">
             </video>
@@ -56,8 +56,8 @@
                   clearInterval(p),
                   setInterval(function() {
                       var s = n(".ss");
-                      s.fadeOut(300),
-                      s.fadeIn(300)
+                      // s.fadeOut(300),
+                      // s.fadeIn(300)
                   }, 1e3)
               }, 6e3);
               var s = 0
