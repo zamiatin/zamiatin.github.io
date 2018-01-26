@@ -151,9 +151,9 @@ a {
     background-size: 100%;
   }
 
-  .container {
-    max-width: 700px;
-  }
+  // .container {
+  //   max-width: 700px;
+  // }
 
   .logo-wrap {
     background: url(../img/bg-main-header.png) no-repeat center bottom;
@@ -166,10 +166,10 @@ a {
     padding-bottom: 315px;
   }
 
-  .main-wrap video {
-    height: 360px;
-    max-height: 360px;
-  }
+  // .main-wrap video {
+  //   height: 360px;
+  //   max-height: 360px;
+  // }
 
   .controls {
     position: absolute;
