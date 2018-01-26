@@ -14,16 +14,7 @@
           <div class="logo-wrap">
             <img src="img/logo.png" alt="" />
           </div>
-          <div class="main-wrap" id='media'>
-<!--             <video playsinline autoplay loop muted>
-              <source src="img/1.mp4" type="video/mp4">
-              <source src="img/1.ogg" type="video/ogg">
-            </video> -->
-<!--             <audio autoplay>
-              <source src="5.mp3" type="audio/ogg">
-            </audio> -->
-            <!-- <iframe src="https://www.youtube.com/embed/LQZ79RphX0c?autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-          </div>
+          <div id='media' class="main-wrap"></div>
           <div class="controls">
             <div class="timer">
               <span class="ss s1"></span>
@@ -82,8 +73,8 @@
                   clearInterval(p),
                   setInterval(function() {
                       var s = n(".ss");
-                      // s.fadeOut(300),
-                      // s.fadeIn(300)
+                      s.fadeOut(300),
+                      s.fadeIn(300)
                   }, 1e3)
               }, 6e3);
               var s = 0
@@ -122,24 +113,6 @@
                   n("span.s6").html(m),
                   n("span.s7").html(e)
               }, 5)
-              // window.addEventListener('load', function () {
-              //     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-              //     var source = audioCtx.createBufferSource();
-              //     var xhr = new XMLHttpRequest();
-              //     xhr.open('GET', '5.mp3');
-              //     xhr.responseType = 'arraybuffer';
-              //     xhr.addEventListener('load', function (r) {
-              //         audioCtx.decodeAudioData(
-              //                 xhr.response,
-              //                 function (buffer) {
-              //                     source.buffer = buffer;
-              //                     source.connect(audioCtx.destination);
-              //                     source.loop = false;
-              //                 });
-              //         source.start(0);
-              //     });
-              //     xhr.send();
-              // });
           })
       }(jQuery);
     </script>

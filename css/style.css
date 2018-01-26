@@ -152,7 +152,7 @@ a {
   }
 
   .container {
-    max-width: 940px;
+    max-width: 700px;
   }
 
   .logo-wrap {
@@ -167,8 +167,8 @@ a {
   }
 
   .main-wrap video {
-    height: 486px;
-    max-height: 486px;
+    height: 360px;
+    max-height: 360px;
   }
 
   .controls {
@@ -218,6 +218,15 @@ a {
   .container-bg {
     background: url(../img/bg-main-xl.jpg) no-repeat;
     background-size: 100%;
+  }
+
+  .container {
+    max-width: 940px;
+  }
+
+  .main-wrap video {
+    height: 486px;
+    max-height: 486px;
   }
 }
 
