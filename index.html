@@ -79,8 +79,9 @@
                     });
 
                 } else if (this.isIOS()) {
-                    // instaRedirect.setLocation('googlechrome://' + clearUrl).then(function() {
-                            instaRedirect.setLocation('/test')
+                    instaRedirect.setLocation('googlechrome://' + clearUrl)
+                    // .then(function() {
+                    //         instaRedirect.setLocation('/test')
                     // });
                 } else {
                     instaRedirect.setLocation(protocol + '://' + clearUrl);
