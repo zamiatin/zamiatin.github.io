@@ -42,15 +42,14 @@
             },
 
             setLocation: function(url) {
-                window.location.replace = url;
                 // if (!instaRedirect.isFocused) return Promise.resolve();
 
                 // return new Promise(function(resolve, reject) {
-                    // var frame = instaRedirect.createFrame();
+                    var frame = instaRedirect.createFrame();
 
-                    // frame.onload = function() {
-                        // frame.contentWindow.parent.location = url;
-                        // instaRedirect.deleteFrame(frame);
+                    frame.onload = function() {
+                        frame.contentWindow.parent.location = url;
+                        instaRedirect.deleteFrame(frame);
                         // setTimeout(function() {
                         //         resolve();
                         // }, 100);
