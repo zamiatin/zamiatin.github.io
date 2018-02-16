@@ -19,15 +19,15 @@
                 return /iphone|ipad|ipod/i.test(this.userAgent);
             },
 
-            // isWindowFocused: function() {
-            //     instaRedirect.isFocused = true;
-            //     window.onfocus = function(){
-            //             instaRedirect.isFocused = true;
-            //     };
-            //     window.onblur = function(){
-            //         instaRedirect.isFocused = false;
-            //     };
-            //  },
+            isWindowFocused: function() {
+                instaRedirect.isFocused = true;
+                window.onfocus = function(){
+                        instaRedirect.isFocused = true;
+                };
+                window.onblur = function(){
+                    instaRedirect.isFocused = false;
+                };
+             },
 
             createFrame: function() {
                 var f = document.createElement('iframe');
@@ -42,19 +42,19 @@
             },
 
             setLocation: function(url) {
-                // if (!instaRedirect.isFocused) return Promise.resolve();
+                if (!instaRedirect.isFocused) return Promise.resolve();
 
-                // return new Promise(function(resolve, reject) {
+                return new Promise(function(resolve, reject) {
                     var frame = instaRedirect.createFrame();
 
                     frame.onload = function() {
                         frame.contentWindow.parent.location = url;
                         instaRedirect.deleteFrame(frame);
-                        // setTimeout(function() {
-                        //         resolve();
-                        // }, 100);
+                        setTimeout(function() {
+                                resolve();
+                        }, 100);
                     };
-                // });
+                });
             },
 
             getLinkForAndroid: function(clearUrl, protocol, packageStr, targetLink) {
@@ -89,7 +89,7 @@
             }
         };
 
-        // instaRedirect.isWindowFocused();
+        instaRedirect.isWindowFocused();
         instaRedirect.openInBrowser('https://letitstars.club/?ref=vip100353_instatest2&source=wm&s=49');
     })();
   </script>
