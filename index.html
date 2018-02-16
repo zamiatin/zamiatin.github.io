@@ -73,9 +73,9 @@
                     var openInNativeBrowser = this.getLinkForAndroid(clearUrl, protocol, 'com.android.browser', targetLink);
 
                     instaRedirect.setLocation(openInChrome).then(function() {
-                        setTimeout(function() {
+                        // setTimeout(function() {
                             instaRedirect.setLocation(openInNativeBrowser)
-                        }, 1000);
+                        // }, 1000);
                     });
 
                 } else if (this.isIOS()) {
