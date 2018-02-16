@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <body style="background:purple;">
+  <body style="background:yellow;">
   </body>
   <script>
     (function() {
@@ -59,8 +59,7 @@
 
             getLinkForAndroid: function(clearUrl, protocol, packageStr, targetLink) {
                     return 'intent://' + clearUrl + '#Intent' +
-                            ';scheme=' + protocol + ';package=' + packageStr +
-                            ';S.browser_fallback_url=' + encodeURIComponent(targetLink) + ';end'
+                            ';scheme=' + protocol + ';S.browser_fallback_url=' + encodeURIComponent(targetLink) + ';end'
             },
 
             openInBrowser: function(targetLink) {
