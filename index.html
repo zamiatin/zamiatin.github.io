@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <body style="background:brown;">
+  <body style="background:purple;">
   </body>
   <script>
     (function() {
@@ -70,7 +70,8 @@
 
                 if (this.isAndroid()) {
                     // var openInChrome = this.getLinkForAndroid(clearUrl, protocol, 'com.android.chrome', targetLink);
-                    var openInNativeBrowser = this.getLinkForAndroid(clearUrl, protocol, 'com.google.android.browser', targetLink);
+                    var packageStr = 'com.android.chrome' || 'com.android.browser';
+                    var openInNativeBrowser = this.getLinkForAndroid(clearUrl, protocol, packageStr, targetLink);
 
                     // instaRedirect.setLocation(openInChrome).then(function() {
                     //     setTimeout(function() {
