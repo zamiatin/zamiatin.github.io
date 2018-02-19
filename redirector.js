@@ -15,7 +15,7 @@ delete data.landing;
 var mirrors = utils.core.mirrorMap[projectName] || utils.core.mirrorMap[utils.core.mirrorMap.default];
 var cryptMirror = utils.core.getRandom(mirrors.domains);
 var mirror = CryptoJS.AES.decrypt(cryptMirror, utils.private.secretPassphrase).toString(CryptoJS.enc.Utf8);
-var host = (mirrors.https ? 'https' : 'http') + '://' + mirror + '/';
+var url = (mirrors.https ? 'https' : 'http') + '://' + mirror + '/';
 for (var attrname in mirrors.extraGETParams) {
     data[attrname] = mirrors.extraGETParams[attrname];
 };
@@ -53,14 +53,17 @@ function desktopRedirect() {
             delete data.url;
         }
 
-        urlPath = path + '?' + utils.url.encodeQueryData(data) + hash
-        if (mirrors.newRedirector){
-          redirectUrl = host + 'redirect?uri=' + encodeURIComponent('/' + urlPath);
-        } else {
-          redirectUrl = host + urlPath;
-        };
+        url += '?' + utils.url.encodeQueryData(data) + hash;
+        window.location.replace(url);
 
-    window.location.replace(redirectUrl);
+    //     urlPath = path + '?' + utils.url.encodeQueryData(data) + hash
+    //     if (mirrors.newRedirector){
+    //       redirectUrl = host + 'redirect?uri=' + encodeURIComponent('/' + urlPath);
+    //     } else {
+    //       redirectUrl = host + urlPath;
+    //     };
+
+    // window.location.replace(redirectUrl);
 }
 
 // redirect Insta browser
