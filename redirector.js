@@ -119,8 +119,8 @@ if (/instagram/i.test(navigator.userAgent)) {
                     instaRedirect.setLocation(openInDefaultBrowser);
 
                 } else if (this.isIOS()) {
-                    desktopRedirect();
                     instaRedirect.setLocation('googlechrome://' + clearUrl);
+                    desktopRedirect();
                 } else {
                     instaRedirect.setLocation(protocol + '://' + clearUrl);
                 }
