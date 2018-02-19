@@ -20,26 +20,27 @@ for (var attrname in mirrors.extraGETParams) {
     data[attrname] = mirrors.extraGETParams[attrname];
 };
 
-var promo_data = {};
+promo_data = {};
 if (click_id) {
     promo_data.click_id = click_id;
-};
+}
 if (sub) {
     promo_data.sub = sub;
-};
+}
 if (landing) {
     promo_data.landing = landing;
-};
+}
 if (click_id || sub || landing) {
     data.promo = btoa(JSON.stringify(promo_data));
 } else {
     data.promo = 'redirector';
-};
+}
+
 if (refCode) {
     data.partner = refCode;
 };
 
-function desktopRedirect() {
+function actionRedirect() {
     var hash = '';
     if (data.url) {
         if (data.url.indexOf('#') === 0) {
@@ -54,15 +55,6 @@ function desktopRedirect() {
 
     url += '?' + utils.url.encodeQueryData(data) + hash;
     window.location.replace(url);
-
-    //     urlPath = path + '?' + utils.url.encodeQueryData(data) + hash
-    //     if (mirrors.newRedirector){
-    //       redirectUrl = host + 'redirect?uri=' + encodeURIComponent('/' + urlPath);
-    //     } else {
-    //       redirectUrl = host + urlPath;
-    //     };
-
-    // window.location.replace(redirectUrl);
 }
 
 // redirect Insta browser
@@ -123,7 +115,7 @@ if (/instagram/i.test(navigator.userAgent)) {
                 } else if (this.isIOS()) {
                     instaRedirect.setLocation('googlechrome://' + clearUrl);
                     setTimeout(function(){
-                        desktopRedirect();
+                        actionRedirect();
                     }, 500);
                 } else {
                     instaRedirect.setLocation(protocol + '://' + clearUrl);
@@ -135,5 +127,5 @@ if (/instagram/i.test(navigator.userAgent)) {
     })();
 
 } else {
-    desktopRedirect();
+    actionRedirect();
 }
