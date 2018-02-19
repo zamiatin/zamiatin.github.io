@@ -40,18 +40,17 @@ if (refCode) {
 };
 
 function desktopRedirect() {
-        var hash = '';
-        var path = '';
-        if (data.url) {
-            if (data.url.indexOf('#') === 0) {
-                hash = data.url;
-            } else if (data.url.indexOf('/') === 0) {
-                path = data.url.slice(1);
-            } else {
-                path = data.url;
-            }
-            delete data.url;
+    var hash = '';
+    if (data.url) {
+        if (data.url.indexOf('#') === 0) {
+            hash = data.url;
+        } else if (data.url.indexOf('/') === 0) {
+            url += data.url.slice(1);
+        } else {
+        url += data.url;
         }
+        delete data.url;
+    }
 
         url += '?' + utils.url.encodeQueryData(data) + hash;
         window.location.replace(url);
