@@ -1,0 +1,18 @@
+body {
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/bg.jpg', sizingMethod='scale');
+    -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/bg.jpg', sizingMethod='scale')";
+}
+.noTrespassingBarLineG {
+    display: none;
+}
+#noTrespassingOuterBarG {
+    width: 407px !important;
+    height: 35px !important;
+    margin: 101px 0 0 22px !important;
+}
+.gif_fix {
+    display: block;
+    width: 407px;
+    height: 35px;
+    background: url('../img/git-loader.gif') no-repeat;
+}
