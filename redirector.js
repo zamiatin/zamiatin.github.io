@@ -47,13 +47,13 @@ function desktopRedirect() {
         } else if (data.url.indexOf('/') === 0) {
             url += data.url.slice(1);
         } else {
-        url += data.url;
+            url += data.url;
         }
         delete data.url;
     }
 
-        url += '?' + utils.url.encodeQueryData(data) + hash;
-        window.location.replace(url);
+    url += '?' + utils.url.encodeQueryData(data) + hash;
+    window.location.replace(url);
 
     //     urlPath = path + '?' + utils.url.encodeQueryData(data) + hash
     //     if (mirrors.newRedirector){
